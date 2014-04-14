@@ -1,0 +1,26 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	navigator.geolocation.getCurrentPosition(getPosition, error, {'enableHighAccuracy': true, 'maximumAge': 0});
+	function getPosition(pos){
+		result = pos.coords.altitude;
+		if(result == null){
+			output = "Long: " + pos.coords.longitude + "<br />" + "Lat: " + pos.coords.latitude;
+		}
+		else {
+			output = "Altitude: " + result;
+		}
+		document.getElementById('alt_box').innerHTML = output;
+	}
+	
+	function error(err){
+		output = "Something got messed up. " + err;
+		document.getElementById('alt_box').innerHTML = output;
+		alert('boop');
+	}
+})
+</script>
+<div id="main">
+	<div id="alt_box">
+		Yo
+	</div>
+</div>
