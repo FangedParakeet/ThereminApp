@@ -1,6 +1,6 @@
 <script type="text/javascript">
 $(document).ready(function(){
-	navigator.geolocation.getCurrentPosition(getPosition, error, {'enableHighAccuracy': false, 'maximumAge': 0, 'frequency': 1000, 'timeout': 10000});
+	var id = navigator.geolocation.watchPosition(getPosition, error, {'enableHighAccuracy': false, 'maximumAge': 0, 'timeout': 10000});
 	function getPosition(pos){
 		result = pos.coords.altitudeAccuracy;
 		if(result == null){
