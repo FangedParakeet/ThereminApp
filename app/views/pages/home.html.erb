@@ -3,7 +3,7 @@ $(document).ready(function(){
 	navigator.geolocation.getCurrentPosition(getPosition, error, {'enableHighAccuracy': true, 'maximumAge': 0});
 	function getPosition(pos){
 		result = pos.coords.altitude;
-		if(result == null){
+		if(result == 'poo'){
 			output = "Long: " + pos.coords.longitude + "<br />" + "Lat: " + pos.coords.latitude;
 		}
 		else {
